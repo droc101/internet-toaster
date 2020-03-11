@@ -24,9 +24,8 @@
           if (window.toast_made < 1) {
          	 window.toast_made -= 1;
          	 document.getElementById("toast_count").innerHTML = "Toast Made: " + window.toast_made;
-         	 alert("YUMMMMMMY");
           }else{
-            alert("There is no toast to eat!");
+            document.getElementById("err").innerHTML = "There is no toast to eat.";
           }
         }
   	</script>
@@ -47,6 +46,7 @@
 <p><span style="font-family:arial,helvetica,sans-serif;"><button onclick="toast();">Toast the bread</button></span></p>
 
 <p><span style="font-family:arial,helvetica,sans-serif;"><button onclick="eat();">Eat one toast!</button></span></p>
+	<p style="color:red" id="err"></p>
 
 <p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;">Yes, You can run it for&nbsp;<em>one second</em></span></span></p>
 
