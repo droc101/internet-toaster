@@ -21,7 +21,7 @@
             window.global_timer = parseInt(time);
         };
       	function eat() {
-          if (window.toast_made < 1) {
+          if (window.toast_made > 1) {
          	 window.toast_made -= 1;
          	 document.getElementById("toast_count").innerHTML = "Toast Made: " + window.toast_made;
           }else{
