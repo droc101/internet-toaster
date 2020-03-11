@@ -8,6 +8,7 @@
       	setInterval(function(){ 
           window.global_timer -= 1;
           document.getElementById("timer").innerHTML = "MS Timer: " + window.global_timer;
+          document.getElementById("seconds").innerHTML = " S Timer: " + Math.round(window.global_timer / 1000);
           if (window.global_timer == 0) {
             window.toast_made += window.slice_queue;
             document.getElementById("toast_count").innerHTML = "Toast Made: " + window.toast_made;
@@ -20,11 +21,10 @@
             window.global_timer = parseInt(time);
         };
   	</script>
-  	<style>
-  		* {
+	<style type="text/css">* {
          	font-family: Arial;
       	}
-  	</style>
+	</style>
 </head>
 <body>
 <h1><span style="font-family:arial,helvetica,sans-serif;">Toaster Simulator</span></h1>
@@ -41,9 +41,11 @@
 
 <p id="toast_count"><span style="font-family:arial,helvetica,sans-serif;"><strong>Toast Made: 0</strong></span></p>
 
-<hr />
-<h3><span style="font-family:arial,helvetica,sans-serif;">DEBUG:</span></h3>
+<details><summary>Debug Information (Click to show)</summary>
+	<p>Note: Times may not be accurate, amy depend on browser</p>
+<p id="seconds">Seconds Left: 0</p>
 
 <p id="timer"><span style="font-family:arial,helvetica,sans-serif;">MS Timer: 0</span></p>
+</details>
 </body>
 </html>
