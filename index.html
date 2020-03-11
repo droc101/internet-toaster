@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Toaster</title>
+	<script>
+      	window.global_timer = 0;
+      	window.slice_queue = 0;
+      	window.toast_made = 0;
+      	setInterval(function(){ 
+          window.global_timer -= 1;
+          document.getElementById("timer").innerHTML = "MS Timer: " + window.global_timer;
+          if (window.global_timer == 0) {
+            window.toast_made += window.slice_queue;
+            document.getElementById("toast_count").innerHTML = "Toast Made: " + window.toast_made;
+          }
+        }, 1);
+  		var toast = function() {
+          	var time = document.getElementById("time").value;
+          	var slices = document.getElementById("slice").value;
+          	window.slice_queue = parseInt(slices);
+            window.global_timer = parseInt(time);
+        };
+  	</script>
+</head>
+<body>
+<h1><span style="font-family:arial,helvetica,sans-serif;">Toaster Simulator</span></h1>
+
+<h3><span style="font-family:arial,helvetica,sans-serif;">Options:</span></h3>
+
+<p><span style="font-family:arial,helvetica,sans-serif;">Time:&nbsp;</span><select id="time"><option value="1000">1 Second</option><option value="30000">30 Seconds</option><option value="60000">1 Minute</option><option value="120000">2 Minutes</option><option value="180000">3 Minutes</option></select></p>
+
+<p><span style="font-family:arial,helvetica,sans-serif;">Insert&nbsp;</span><select id="slice"><option value="1">1</option><option selected="selected" value="2">2</option></select><span style="font-family:arial,helvetica,sans-serif;">&nbsp;slices of bread</span></p>
+
+<p><span style="font-family:arial,helvetica,sans-serif;"><button onclick="toast();">Toast the bread</button></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;">Yes, You can run it for&nbsp;<em>one second</em></span></span></p>
+
+<p id="toast_count"><span style="font-family:arial,helvetica,sans-serif;"><strong>Toast Made: 0</strong></span></p>
+
+<hr />
+<h3><span style="font-family:arial,helvetica,sans-serif;">DEBUG:</span></h3>
+
+<p id="timer"><span style="font-family:arial,helvetica,sans-serif;">MS Timer: 0</span></p>
+</body>
+</html>
