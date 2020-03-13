@@ -7,8 +7,8 @@
       	window.toast_made = 0;
       	setInterval(function(){ 
           window.global_timer -= 1;
-          document.getElementById("timer").innerHTML = "MS Timer: " + window.global_timer;
-          document.getElementById("seconds").innerHTML = " S Timer: " + Math.round(window.global_timer / 100);
+          document.getElementById("timer").innerHTML = "Millisecond Left: " + window.global_timer;
+          document.getElementById("seconds").innerHTML = "   Seconds Left: " + Math.ceil(window.global_timer / 100);
           if (window.global_timer == 0) {
             window.toast_made += window.slice_queue;
             document.getElementById("toast_count").innerHTML = "Toast Made: " + window.toast_made;
@@ -56,9 +56,9 @@
 
 <p>Note: Times may not be accurate, amy depend on browser</p>
 
-<p id="seconds">Seconds Left: 0</p>
+<p id="seconds">//</p>
 
-<p id="timer"><span style="font-family:arial,helvetica,sans-serif;">MS Timer: 0</span></p>
+<p id="timer"><span style="font-family:arial,helvetica,sans-serif;">//</span></p>
 </details>
 </body>
 </html>
